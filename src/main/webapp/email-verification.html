@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script language ="javascript">
+$( document ).ready(function () {
+const urlParams= new URLSearchParams(window.location.search);
+
+if(urlParams.has('token')){
+verifyToken(urlParams.get('token'));
+console.log(urlParams.get('token'));
+}
+function verifyToken(tokenValue){
+	console.log(tokenValue);
+	$.ajax({
+		url: "http://localhost:8080/sneakbuy/auth/email-verification",
+		type: "GET",
+		data:{
+			token:tokenValue
+		},success: function(response){
+			$("#success-result").attr("display:block")
+		},error:function(e){
+			alert("ERROR")
+			console.log("ERROR", e);
+		}
+	});
+}
+
+});
+
+</script>
+</head>
+<body>
+<div id="success-result" style="display:none">SUCCESS VERIFICATION</div>
+<div id="not-success-result" style="display:none">VERIFICATION LINK EXPIRED</div>
+
+
+</body>
+</html>
