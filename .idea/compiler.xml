@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="com.email.verification" />
+        <module name="verify-email" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="com.email.verification" target="1.5" />
+      <module name="verify-email" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

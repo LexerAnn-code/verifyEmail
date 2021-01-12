@@ -7,7 +7,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script language ="javascript">
 $( document ).ready(function () {
-const urlParams= new URLSearchParams(window.location.search);
+var urlParams= new URLSearchParams(window.location.search);
 
 if(urlParams.has('token')){
 verifyToken(urlParams.get('token'));
@@ -21,7 +21,13 @@ function verifyToken(tokenValue){
 		data:{
 			token:tokenValue
 		},success: function(response){
-			$("#success-result").attr("display:block")
+		    if(response["operationResults"] === "SUCCESS"){
+		    $("#success-result").attr("style", "display: block !important;")
+		   }
+		   else{
+		   $("#not-success-result").attr("style", "display: block !important;")
+		   }
+
 		},error:function(e){
 			alert("ERROR")
 			console.log("ERROR", e);

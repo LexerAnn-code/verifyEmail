@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/com.email.verification.iml" filepath="$PROJECT_DIR$/com.email.verification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/verify-email.iml" filepath="$PROJECT_DIR$/verify-email.iml" />
     </modules>
   </component>
 </project>
